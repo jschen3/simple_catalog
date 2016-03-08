@@ -1,0 +1,32 @@
+.container {
+    margin:0 auto;
+    width: 800px
+}
+.text-input {
+    width: 200px;
+}
+.input1 {
+    margin-left: 33px;
+}
+.input2 {
+    margin-left: 22px;
+}
+.input3 {
+    margin-left: 4px;
+}
+.login-section{
+    margin-top:20px;
+}
+.table-div{
+    padding-top: 60px;
+    clear: both;
+}
+.input-quantity{
+    width: 50px;
+}
+.add{
+    float: left;
+}
+.table{
+    margin-top: 50px;
+}

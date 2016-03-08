@@ -1,0 +1,18 @@
+Coding Challenge
+
+Your goal is to build a small JavaScript client app to create invoices. The app should function and look good.  You can mock up the backend data sets to save time if you like (recommended).
+
+The real purpose here is to see how you go about designing and structuring your code. The modeling and overall though process is more interesting than the polish of the UI, but the interaction design is important.  The app is very basic but it should make visual sense and be intuitive.
+
+Acceptance Criteria:
+ 1. User can click a button/link to create invoice.
+ 2. User can specify customer name, date and invoice number.
+ 3. User can add multiple line items by selecting products from a product search component.
+ 4. Products/line items include Product Name, Quantity, Price, Total
+ 5. Line item fields for Quantity and Price are editable.
+ 6. Form is auto-saved or provides a Save button the user can click.
+
+Again, that Save action doesn’t have to actually persist anything, and the Product Search can have hard-coded results to choose from.  The only reason to use an actual database is if you feel it is easier.
+
+Bonus questions:
+As you think about the design consider what an enterprise user with their own business processes would need.  How much configurability would you add? How can you reduce clicks and keystrokes?

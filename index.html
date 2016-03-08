@@ -1,0 +1,54 @@
+<html ng-app="invoiceApp">
+<head>
+    <title>Steel Brick Coding Challenge Invoices</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-animate.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/invoice-app.js"></script>
+    <script type="text/javascript" src="js/angular-aria.min.js"></script>
+    <script type="text/javascript" src="js/angular-material.min.js"></script>
+    <script type="text/javascript" src="js/angular-messages.min.js"></script>
+</head>
+<body ng-controller="InvoiceCtrl">
+    <div class="container" width="800px" id="container">
+        <div class="title-section" style="text-align: center">
+            <h1>Steel Brick Invoices</h1>
+        </div>
+        <div class="login-section" style="float:left">
+            Name: <input class="text-input input1" field="text" value="John Doe"/><br>
+            Address:<input class="text-input input2" field="text" value="The LandMark at One Market"/><br>
+            City / State:<input class="text-input input3" field="text" value="San Francisco, CA">
+        </div>
+        <div class="company-section" style="float:right">
+            <img src="images/steelbrick.png"/>
+        </div>
+        <div class="table-div" id="table-div">
+            <a class="btn btn-primary add" role="button" ng-click="showDialog($event)">Add Item</a>
+
+            </md-button>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Delete?</th>
+            </tr>
+            <tr ng-repeat="item in invoice">
+                <td>{{item.id}}</td>
+                <td><img ng-src="{{item.image}}"/>
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+                <td><input type="text" class="input-quantity" ng-model="item.quantity" ng-change="updateTotal(item.id)"/></td>
+                <td>{{item.total}}</td>
+                <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item.id)"/></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+</body>
+</html>
