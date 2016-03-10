@@ -48,3 +48,13 @@
   text-align: left;
   vertical-align: middle;
 }
+.scrollable{
+    height: 300px;
+    overflow: scroll;
+}
+.fa fa-search{
+    float:left;
+}
+.total{
+    float:right;
+}

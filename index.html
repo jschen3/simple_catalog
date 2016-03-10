@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <script type="text/javascript" src="js/angular.js"></script>
     <script type="text/javascript" src="js/angular-animate.js"></script>
@@ -15,9 +16,9 @@
             <h1>Steel Brick Invoices</h1>
         </div>
         <div class="login-section" style="float:left">
-            Name: <input class="text-input input1" field="text" value="John Doe"/><br>
-            Address:<input class="text-input input2" field="text" value="The LandMark at One Market"/><br>
-            City / State:<input class="text-input input3" field="text" value="San Francisco, CA">
+            Name: <input class="text-input input1" field="text" ng-model="info.name"/><br>
+            Address:<input class="text-input input2" field="text" ng-model="info.address"/><br>
+            City / State:<input class="text-input input3" field="text" ng-model="info.city"/>
         </div>
         <div class="company-section" style="float:right">
             <img src="images/steelbrick.png"/>
@@ -44,6 +45,9 @@
                 <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(item.id)"/></td>
             </tr>
         </table>
+        <div class="total">
+            <h2>Total:{{total}}</h2>
+        </div>
         </div>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
@@ -53,7 +57,25 @@
                 <h4 class="modal-title">Catalog</h4>
               </div>
               <div class="modal-body">
-
+                <div>
+                <i class="fa fa-search"></i><input type="text" placeholder="filter" ng-model="searchQuery"/>
+                </div>
+                <div class="scrollable">
+                      <table class="table">
+                         <tr>
+                             <th>Item Name</th>
+                             <th>Image</th>
+                             <th>Price</th>
+                             <th>Add?</th>
+                        </tr>
+                        <tr ng-repeat="item in catalog | filter:searchQuery">
+                            <td>{{item.name}}</td>
+                            <td><img ng-src="{{item.image}}"/></td>
+                            <td>{{item.price}}</td>
+                            <td><input type="button" value="Add" class="btn btn-primary" ng-click="addItem(item.id)"/></td>
+                        </tr>
+                      </table>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
