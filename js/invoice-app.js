@@ -1,8 +1,10 @@
 var invoiceApp = angular.module("invoiceApp" ,[]);
 invoiceApp.controller("InvoiceCtrl", function($scope){
     $scope.total=(13.00).toFixed(2);
-    //$scope.total=$scope.calculateTotal();
-    $scope.info={'name':'John Doe','address':'The LandMark at One Market','city':'San Francisco, CA','date':''};
+    $scope.info={'username':'John Doe','date':'','id':''};
+    var d=new Date();
+    $scope.info.date=parseInt(d.getMonth())+parseInt(1)+"/"+d.getDate()+"/"+d.getFullYear();
+    $scope.info.id=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
     $scope.invoice=[
         {'id':'0', 'image':'images/banana.jpeg', 'name':'bananas','price':'6.00','quantity':'1', 'total':'6.00'},
         {'id':'1', 'image':'images/apple.jpeg', 'name':'apples','price':'3.00', 'quantity':'1', 'total':'3.00'},
@@ -67,6 +69,7 @@ invoiceApp.controller("InvoiceCtrl", function($scope){
                 'price':catalogItems[index].price, 'quantity':'1', 'total':catalogItems[index].price});
         }
         else{
+            $scope.invoice[invoiceId].price=catalogItems[index].price;
             $scope.invoice[invoiceId].quantity=parseInt($scope.invoice[invoiceId].quantity)+parseInt(parseInt(1));
             $scope.invoice[invoiceId].total=(parseInt($scope.invoice[invoiceId].quantity)*parseInt($scope.invoice[invoiceId].price)).toFixed(2);
         }
@@ -79,5 +82,12 @@ invoiceApp.controller("InvoiceCtrl", function($scope){
             sum+=parseInt(invoiceItems[i].total);
         }
         $scope.total=sum.toFixed(2);
+    };
+    $scope.print = function(){
+        var restorepage = document.body.innerHTML;
+	    var printcontent = document.getElementById("invoice-main").innerHTML;
+	    document.body.innerHTML = printcontent;
+	    window.print();
+	    document.body.innerHTML = restorepage;
     };
 });

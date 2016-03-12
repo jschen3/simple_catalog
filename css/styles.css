@@ -14,11 +14,17 @@
 .input3 {
     margin-left: 4px;
 }
+.input4 {
+    margin-left: 40px;
+}
+.input5 {
+    margin-left:9px;
+}
 .login-section{
     margin-top:20px;
 }
 .table-div{
-    padding-top: 60px;
+    padding-top: 15px;
     clear: both;
 }
 .input-quantity{
@@ -57,4 +63,40 @@
 }
 .total{
     float:right;
+}
+h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.footer{
+    height: 100px;
+}
+.invoice-info{
+    float:left;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.invoice-image{
+    float: right;
+}
+.modal-body{
+    padding-top: 5px;
+}
+.modal-footer{
+    clear: both;
+}
+.invoice-company-name{
+    font-size: 24px;
+}
+.invoice-main{
+    clear: both;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.invoice-final{
+    clear:both;
+}
+.print-text{
+    font-size: medium;
 }
