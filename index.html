@@ -27,7 +27,7 @@
             <h1>Steel Brick Invoices</h1>
         </div>
         <div class="login-section" style="float:left">
-            Name: <input class="text-input input1" field="text" ng-model="info.username"/><br>
+            Name: <input class="text-input input1" field="text" ng-model="info.name"/><br>
             Date: <input class="text-input input4" type="text" placeholder="mm/dd/yyyy" id="datepicker" ng-model="info.date"/><br>
             Invoice Id: <input class="text-input input5" field="text" ng-model="info.id"/>
         </div>
@@ -111,7 +111,7 @@
                       <div class="invoice-info">
                           <div class="invoice-company-name">SteelBrick<br></div>
                           <div class="invoice-final-info">
-                              Name: {{info.username}}<br>
+                              Name: {{info.name}}<br>
                               Invoice id: {{info.id}}<br>
                               Invoice Date: {{info.date}}<br>
                           </div>

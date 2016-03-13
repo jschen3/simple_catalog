@@ -2,7 +2,7 @@ var app=angular.module('invoiceApp',[]);
 angular.module('invoiceApp').controller('InvoiceCtrl', ['$scope', 'invoiceFactory', 'catalogFactory', function($scope, invoiceFactory, catalogFactory){
     var d=new Date();
     $scope.total=invoiceFactory.getTotal();
-    $scope.info={'username':'John Doe','date':'','id':''};
+    $scope.info={'name':'John Doe','date':'','id':''};
     $scope.info.date=parseInt(d.getMonth())+parseInt(1)+"/"+d.getDate()+"/"+d.getFullYear();
     $scope.info.id=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
     $scope.invoice=invoiceFactory.getInvoice();
