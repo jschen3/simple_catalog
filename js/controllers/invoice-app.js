@@ -17,6 +17,10 @@ angular.module('invoiceApp').controller('InvoiceCtrl', ['$scope', 'invoiceFactor
         invoiceFactory.addItem(item);
         $scope.total=invoiceFactory.getTotal();
     };
+    $scope.updateRow = function(id, price, quantity){
+        invoiceFactory.updateRow(id, price, quantity);
+        $scope.total=invoiceFactory.getTotal();
+    }
     $scope.print = function(){
         var restorepage = document.body.innerHTML;
 	    var printcontent = document.getElementById("invoice-main").innerHTML;
@@ -24,8 +28,4 @@ angular.module('invoiceApp').controller('InvoiceCtrl', ['$scope', 'invoiceFactor
 	    window.print();
 	    document.body.innerHTML = restorepage;
     };
-    $scope.updateRow = function(id, price, quantity){
-        invoiceFactory.updateRow(id, price, quantity);
-        $scope.total=invoiceFactory.getTotal();
-    }
 }]);
