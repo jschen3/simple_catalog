@@ -1,3 +1,6 @@
+/*
+ * Module representing the catalog
+ */
 angular.module('invoiceApp').factory('catalogFactory', function(){
     var _catalog=[
         {'id':'0', 'image':'images/banana.jpeg', 'name':'bananas','price':'6.00'},
@@ -11,10 +14,18 @@ angular.module('invoiceApp').factory('catalogFactory', function(){
         {'id':'8', 'image':'images/mango.jpeg', 'name':'mango rubio', 'price':'2.00'},
         {'id':'9', 'image':'images/grapes.jpeg', 'name':'grapes', 'price': '4.00'}
     ];
+    /* The output factory contains all functions accessible for the catalog*/
     var catalogFactory={};
+    /*
+     *Returns the catalog as an array of items
+     */
     catalogFactory.getCatalog = function(){
         return _catalog;
     }
+    /*
+     *    Searches for an item in the category returns the item if found
+     *    @param id of the item in the index that you are trying to obtain.
+     */
     catalogFactory.getItem = function(id){
         var catalogItems = eval(_catalog);
         for (var i=0; i<catalogItems.length; i++){

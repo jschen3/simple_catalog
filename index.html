@@ -18,9 +18,9 @@
                 format: "mm/dd/yyyy"
             });
         });
-
     </script>
 </head>
+<!-- The body of the invoice app. The main table, title, logo image, etc.   -->
 <body ng-controller="InvoiceCtrl">
     <div class="container" width="800px" id="container">
         <div class="title-section" style="text-align: center">
@@ -64,20 +64,21 @@
         </div>
         <div class="footer">
         </div>
-        <div class="modal fade" id="catalogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
+<!-- The add item / catalog modal -->
+    <div class="modal fade" id="catalogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Catalog</h4>
-              </div>
-              <div class="modal-body">
-                <div>
-                <i class="fa fa-search"></i><input type="text" placeholder="filter" ng-model="searchQuery"/>
-                </div>
-                <div class="scrollable">
-                      <table class="table">
-                         <tr>
+               <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                   <h4 class="modal-title">Catalog</h4>
+               </div>
+               <div class="modal-body">
+                   <div>
+                       <i class="fa fa-search"></i><input type="text" placeholder="filter" ng-model="searchQuery"/>
+                   </div>
+               <div class="scrollable">
+                    <table class="table">
+                        <tr>
                              <th>Item Name</th>
                              <th>Image</th>
                              <th>Price</th>
@@ -89,37 +90,38 @@
                             <td><input type="text" class="input-quantity" ng-model="item.price"/></td>
                             <td><input type="button" value="Add" class="btn btn-primary" ng-click="addItem(item.id)"/></td>
                         </tr>
-                      </table>
-                </div>
+                    </table>
               </div>
+        </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
               </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <div class="modal fade" id="invoiceFinalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h3 class="modal-title">Invoice</h3>
-              </div>
-              <div class="modal-body">
-                  <div style="float:right; clear:both"><a class="btn btn-primary print-text" ng-click="print()"><i class="fa fa-print"></i> Print</a></div>
-                 <div class="invoice-main" id="invoice-main">
-                      <div class="invoice-info">
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    <div class="modal fade" id="invoiceFinalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+           <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h3 class="modal-title">Invoice</h3>
+               </div>
+           <div class="modal-body">
+               <div style="float:right; clear:both"><a class="btn btn-primary print-text" ng-click="print()"><i class="fa fa-print"></i> Print</a></div>
+                    <div class="invoice-main" id="invoice-main">
+                       <div class="invoice-info">
                           <div class="invoice-company-name">SteelBrick<br></div>
                           <div class="invoice-final-info">
                               Name: {{info.name}}<br>
-                              Invoice id: {{info.id}}<br>
+                              Invoice Id: {{info.id}}<br>
                               Invoice Date: {{info.date}}<br>
                           </div>
-                      </div>
-                          <div class="invoice-image">
-                              <img src="images/steelbrick-invoice.png"/>
-                          </div>
-                          <table class="invoice-final table">
+                       </div>
+                           <div class="invoice-image">
+                               <img src="images/steelbrick-invoice.png"/>
+                           </div>
+                           <table class="invoice-final table">
                               <tr>
                                   <th>Item Id</th>
                                   <th>Item Name</th>
@@ -134,19 +136,18 @@
                                   <td>{{item.quantity}}</td>
                                   <td>{{item.total}}</td>
                               </tr>
-                          </table>
-                          <div class="total-final">
-                              Total:{{total}}
-                          </div>
-                      </div>
-                  </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div>
-
+                           </table>
+                           <div class="total-final">
+                               Total:{{total}}
+                           </div>
+                       </div>
+                   </div>
+               <div class="modal-footer">
+                   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+               </div>
+           </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
 </body>
 </html>
