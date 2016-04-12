@@ -1,6 +1,5 @@
 <html ng-app="invoiceApp">
 <head>
-    <title>Steel Brick Coding Challenge Invoices</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" type="text/css"/>
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
@@ -19,12 +18,13 @@
             });
         });
     </script>
+    <title>Simple Catalog Invoices</title>
 </head>
 <!-- The body of the invoice app. The main table, title, logo image, etc.   -->
 <body ng-controller="InvoiceCtrl">
     <div class="container" width="800px" id="container">
         <div class="title-section" style="text-align: center">
-            <h1>Steel Brick Invoices</h1>
+            <h1>Simple Catalog Invoices</h1>
         </div>
         <div class="login-section" style="float:left">
             Name: <input class="text-input input1" field="text" ng-model="info.name"/><br>
@@ -32,7 +32,7 @@
             Invoice Id: <input class="text-input input5" field="text" ng-model="info.id"/>
         </div>
         <div class="company-section" style="float:right">
-            <img src="images/steelbrick.png"/>
+            <img src="images/catalog.jpg"/>
         </div>
         <div class="table-div" id="table-div">
             <a data-toggle="modal" href="#catalogModal" class="btn btn-primary">Add Item</a>
